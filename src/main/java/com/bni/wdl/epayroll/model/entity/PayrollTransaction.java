@@ -1,8 +1,11 @@
 package com.bni.wdl.epayroll.model.entity;
 
 
+import com.bni.wdl.epayroll.enums.ApprovalStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,7 +15,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "payroll_transaction")
+@Table(name = "payroll_transaction", schema = "wdl")
 public class PayrollTransaction {
 
     @Id
@@ -42,4 +45,7 @@ public class PayrollTransaction {
 
     @Column(name = "sender_account_number")
     private String senderAccountNumber;
+
+    @Column(name = "approval_status")
+    private int approvalStatus;
 }

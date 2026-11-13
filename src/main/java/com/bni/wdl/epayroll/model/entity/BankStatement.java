@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "bank_statement")
+@Table(name = "bank_statement", schema = "wdl")
 public class BankStatement {
 
     @Id
