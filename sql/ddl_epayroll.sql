@@ -1,6 +1,6 @@
 
 -- creating account table
-CREATE TABLE IF NOT EXISTS account (
+CREATE TABLE IF NOT EXISTS wdl.account (
     id SERIAL PRIMARY KEY,
     account_number VARCHAR(20) NOT NULL,
     account_name VARCHAR(30) NOT NULL,
@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS account (
 );
 
 -- creating an index for faster by account number
-CREATE INDEX idx_account_number ON account(account_number);
+CREATE INDEX idx_account_number ON wdl.account(account_number);
 
 
 -- creating bank_statement table
-CREATE TABLE IF NOT EXISTS bank_statement (
+CREATE TABLE IF NOT EXISTS wdl.bank_statement (
     id SERIAL PRIMARY KEY,
     company_account_number VARCHAR(20) NOT NULL,
     transaction_id VARCHAR(30) NOT NULL,
@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS bank_statement (
 );
 
 -- creating an index for faster by transaction_id
-CREATE INDEX idx_transaction_id ON bank_statement(transaction_id);
+CREATE INDEX idx_transaction_id ON wdl.bank_statement(transaction_id);
 
 -- creating payroll_transaction table
-CREATE TABLE IF NOT EXISTS payroll_transaction (
+CREATE TABLE IF NOT EXISTS wdl.payroll_transaction (
     id SERIAL PRIMARY KEY,
     transaction_id VARCHAR(30) NOT NULL,
     recipient_account_number VARCHAR(20) NOT NULL,
@@ -41,4 +41,4 @@ CREATE TABLE IF NOT EXISTS payroll_transaction (
 
 
 -- creating an index for faster by transaction_id
-CREATE INDEX idx_transaction_id ON payroll_transaction(transaction_id);
+CREATE INDEX idx_transaction_id ON wdl.payroll_transaction(transaction_id);
