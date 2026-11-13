@@ -1,6 +1,7 @@
 package com.bni.wdl.epayroll.util;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,7 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class AlphaNumericUtilTest {
 
     @Test
-    void generateTransactionId_test() {
-        log.info("===> {}", AlphaNumericUtil.generateTransactionId());
+    public void generateTransactionId_test() {
+        String transactionId = AlphaNumericUtil.generateTransactionId();
+        Assertions.assertNotNull(transactionId);
+
     }
 }
